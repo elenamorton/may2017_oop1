@@ -1,5 +1,14 @@
 require 'calculator'
 
+RSpec.describe Calculator do
+  subject(:calculator) {Calculator.new}
+  it 'adds two numbers' do
+    expect(calculator.add(2, 3)).to eq 5
+    expect(calculator.add(-1, 30)).to eq 29
+  end
+end
+
+
 RSpec.describe 'a calculator' do
   it 'adds two numbers together' do
     expect(add(2, 3)).to eq 5
@@ -20,5 +29,3 @@ RSpec.describe 'a calculator' do
     expect(subtract(0, Float::INFINITY)).to eq -Float::INFINITY
   end
 end
-
-
